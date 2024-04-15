@@ -1,8 +1,9 @@
 import express from "express";
-import { createPicture } from "../controllers/pictureController.js";
+import * as PictureController from "../controllers/pictureController.js";
+import { upload } from "../config/multer.js";
 
 const pictureRouter = express.Router()
 
-pictureRouter.post("/", createPicture)
+pictureRouter.post("/", upload.single("file"), PictureController.create)
 
 export default pictureRouter;

@@ -13,5 +13,5 @@ const port = process.env.PORT || 3000
 app.use("/pictures", pictureRouter)
 
 app.listen(port, () => {
-    console.log(`Server started in the port ${port}`)
+    console.log(`Server started on port ${port}`)
 })
