@@ -8,10 +8,10 @@ const app = express();
 config();
 main();
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
-app.use("/pictures", pictureRouter)
+app.use("/pictures", pictureRouter);
 
 app.listen(port, () => {
-    console.log(`Server started on port ${port}`)
-})
+    console.log(`Server started on port ${port}`);
+});
