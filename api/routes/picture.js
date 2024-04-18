@@ -6,5 +6,6 @@ const pictureRouter = express.Router();
 
 pictureRouter.post("/", upload.single("file"), PictureController.create);
 pictureRouter.get("/", PictureController.findAll);
+pictureRouter.delete("/:id", PictureController.remove);
 
 export default pictureRouter;
