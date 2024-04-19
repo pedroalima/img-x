@@ -41,10 +41,9 @@ export async function remove(req, res) {
 
         fs.unlinkSync(picture.src);
         
-        await picture.remove;
+        await picture.deleteOne();
 
         res.json({ message: "Image removed successfully"});
-        
     } catch (error) {
         console.error("Error deleting image:", error);
         res.status(500).json({ message: "Error deleting image.", error: error.message});
