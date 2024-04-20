@@ -13,7 +13,7 @@ const port = process.env.PORT || 4040;
 const isProduction = process.env.NODE_ENV === "production";
 
 if (isProduction) {
-    app.use(express.static("build")); // Substitua 'build' pelo diretório de build do seu frontend React
+    app.use(express.static("client/dist"));
 }
 
 app.use("/pictures", pictureRouter);
