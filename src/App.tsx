@@ -1,14 +1,15 @@
-import { useState } from "react"
-
+import { ChangeEvent, useState } from "react"
 
 function App() {
-  const [ images, setImages ] = useState([])
+  const [images, setImages] = useState<File[]>([]);
 
-  const handleImageChange = (e) => {
-    const imgFile = Array.from(e.target.files)
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
 
-    setImages(imgFile)
-  }
+    const selectedImages = Array.from(e.target.files);
+    console.log(selectedImages)
+    setImages(selectedImages);
+  };
 
   return (
     <main className="bg-zinc-800 flex justify-center items-center h-screen text-black">
