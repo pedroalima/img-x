@@ -8,7 +8,7 @@ export async function create(req, res) {
 
         const picture = new Picture({
             name,
-            src: file.path.replace(/\\/g, "/"),
+            src: file.path,
         });
         
         await picture.save();
