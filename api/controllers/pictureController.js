@@ -3,11 +3,11 @@ import fs from "fs";
 
 export async function create(req, res) {
     try {
-        const { name } = req.body;
+        console.log(req.file);
         const file = req.file;
 
         const picture = new Picture({
-            name,
+            name: file.originalname,
             src: file.path,
         });
         

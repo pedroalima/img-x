@@ -4,7 +4,7 @@ import { upload } from "../config/multer.js";
 
 const pictureRouter = express.Router();
 
-pictureRouter.post("/", upload.single("file"), PictureController.create);
+pictureRouter.post("/", upload.single("image"), PictureController.create);
 pictureRouter.get("/", PictureController.findAll);
 pictureRouter.delete("/:id", PictureController.remove);
 
