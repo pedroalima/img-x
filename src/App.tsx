@@ -14,7 +14,7 @@ function App() {
 
   async function addPicture(formData: FormData) {
     try {
-        const res = await fetch("https://api-img-x.vercel.app/pictures", { 
+        const res = await fetch("https://api-img-x-git-main-pedroalimas-projects.vercel.app/pictures/", { 
             method: "POST",
             body: formData
         })
