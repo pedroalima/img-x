@@ -24,29 +24,22 @@ A página web é de minha autoria e foi inspirada em outras aplicações já exi
 
 ## Objetivos
 
-O principal objetivo deste projeto foi praticar manipulção de formulários para imagens.
+O principal objetivo deste projeto foi praticar a manipulção de arquivos de imagens em formulários.
 
-<!-- Os usuários têm a capacidade de:
-- Como cliente, é possível visualizar a pagina e navegar entre as opções do menu.
-- Como administrador, estão disponíveis, além da página inicial, outras duas: a de login e a administrativa. A primeira destina-se ao processo de autenticação e a segunda permite a edição das informações exibidas na página inicial.
-
-> OBS - Apenas o criador do projeto possui acesso à página administrativa.
+ Os usuários têm a capacidade de:
+- Armazenar aquivos de imagens na aplicação.
 
 </br>
 
- ## Minha caminhada
+## Minha caminhada
 
-- [x] Protótipo do design
-- [x] Estrutura de rotas front-end
-- [x] Estrutura de rotas back-end
-- [x] Conexão e seviços da API
-- [x] Modelo de objetos
-- [x] Controle de rotas público/privada
-- [x] Aplicação do design
+- [x] Criação da API
+- [x] Conexão do banco de dados (MongoDB)
+- [x] Componente do formulário da imagem (front-end)
 
 </br>
 
-## Propriedades e Tecnologias
+ <!-- ## Propriedades e Tecnologias
 
 - TypeScript
 - Next.js

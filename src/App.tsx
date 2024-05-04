@@ -34,15 +34,15 @@ function App() {
     e.preventDefault();
     console.log(images);
 
-      const formData = new FormData();
+    const formData = new FormData();
 
-      if (images) {
-        for (let i = 0; i < images.length; i++) {
-          formData.append("image", images[i]);
-        }
+    if (images) {
+      for (let i = 0; i < images.length; i++) {
+        formData.append("image", images[i]);
       }
+    }
 
-      await addPicture(formData);
+    await addPicture(formData);
   };
 
   return (
