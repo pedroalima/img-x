@@ -1,8 +1,8 @@
 # Portfólio
 
-Uma aplicação de uploads de imagens.
+Desenvolvi uma aplicação para upload de imagens. 
 
-A página web é de minha autoria e foi inspirada em outras aplicações já existentes, adaptando seus designs e recursos. A aplicação foi desenvolvida utilizando tecnologias como TypeScript, React, MongoDB, TailwindCSS e CSS.
+A página web foi inspirada em outras aplicações já existentes, adaptando seus designs e recursos. Utilizei tecnologias como TypeScript, React, MongoDB, TailwindCSS e CSS no desenvolvimento da aplicação.
 
 ## Índice
 
@@ -24,35 +24,39 @@ A página web é de minha autoria e foi inspirada em outras aplicações já exi
 
 ## Objetivos
 
-O principal objetivo deste projeto foi praticar a manipulção de arquivos de imagens em formulários.
+O principal objetivo deste projeto foi praticar a manipulação de arquivos de imagens em formulários.
 
- Os usuários têm a capacidade de:
-- Armazenar aquivos de imagens na aplicação.
+ Os usuários têm a capacidade de: 
+- Armazenar arquivos de imagens na aplicação.
 
 </br>
 
 ## Minha caminhada
 
-- [x] Criação da API
-- [x] Conexão do banco de dados (MongoDB)
-- [x] Componente do formulário da imagem (front-end)
+- [x] Criação do servidor e conexão com banco de dados (MongoDB)
+- [x] Configuração da biblioteca Multer e definições de rotas para adicionar, criar e deletar imagens no servidor
+- [x] Deploy do servidor
+- [x] Criação do layout e implementação dos serviços de adicionar, criar e deletar no front-end
+- [x] Deploy do front-end
 
 </br>
 
- <!-- ## Propriedades e Tecnologias
+## Propriedades e Tecnologias
 
 - TypeScript
-- Next.js
+- React
+- Vite
+- TailwindCSS
+- CSS
+- Node
+- Express
 - Mongoose
 - MongoDB
-- CSS
-- TailwindCSS
-- Framer Motion
-- Figma
+- Multer
 
 </br>
 
-## Meu aprendizado
+ <!--  ## Meu aprendizado
 
 Ao me deparar com o banco de dados MongoDB pela primeira vez, aprendi sobre o aspecto de modelagem de objetos elaborado pelo Mongoose.
 
