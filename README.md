@@ -53,30 +53,40 @@ O principal objetivo deste projeto foi praticar a manipulação de arquivos de i
 - Mongoose
 - MongoDB
 - Multer
+- CORS
 
 </br>
 
- <!--  ## Meu aprendizado
+  ## Meu aprendizado
 
-Ao me deparar com o banco de dados MongoDB pela primeira vez, aprendi sobre o aspecto de modelagem de objetos elaborado pelo Mongoose.
-
-Após estabelecer a conexão com o banco de dados, é necessário criar um esquema para cada objeto:
+Para trabalhar com upload de arquivos o express precisa de um middleware chamado Multer, que permite manipular dados multipart/form-data, que no pode ser definido aplicando a pripriedade "encType", na criação do formulário HTML.
 
 ```tsx
-import mongoose from "mongoose";
+<form 
+    onSubmit={handleUploadImage} 
+    encType="multipart/form-data" 
+    className="bg-white p-10 rounded-xl flex gap-8 flex-col justify-center items-center"
+    >
+    <h2 
+        className="text-2xl"
+    >Nos envie uma imagem</h2>
 
-const HomeSchema = new mongoose.Schema({
-    mainText: String,
-    description: String,
-},
-{ timestamps: true });
+    <input
+        type="file"
+        accept="image/*"
+        multiple
+        name="image"
+        onChange={handleChangeImage}
+    />
 
-const Home = mongoose.models.Home || mongoose.model("Home", HomeSchema);
-
-export default Home;
+    <button 
+        type="submit" 
+        className="bg-emerald-400 hover:bg-emerald-500 text-white font-bold py-1 px-4 rounded-2xl"
+    >Enviar</button>
+</form>
 ```
 
-Ao definir cada esquema, é necessário criar e exportar o modelo correspondente. Dessa forma, tudo está pronto para ser aplicado em cada rota.
+ <!-- Ao definir cada esquema, é necessário criar e exportar o modelo correspondente. Dessa forma, tudo está pronto para ser aplicado em cada rota.
 
 ```tsx
 import connectToDatabase from "@/database";
