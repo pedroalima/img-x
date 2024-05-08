@@ -47,7 +47,11 @@ function App() {
 
   return (
     <main className="bg-zinc-800 flex justify-center items-center h-screen text-black">
-      <form onSubmit={handleUploadImage} encType="multipart/form-data" className="bg-white p-10 rounded-xl flex gap-8 flex-col justify-center items-center">
+      <form 
+        onSubmit={handleUploadImage} 
+        encType="multipart/form-data" 
+        className="bg-white p-10 rounded-xl flex gap-8 flex-col justify-center items-center"
+      >
         <h2 className="text-2xl">Nos envie uma imagem</h2>
 
         <input
