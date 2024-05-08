@@ -4,6 +4,8 @@ Desenvolvi uma aplicação para upload de imagens.
 
 A página web foi inspirada em outras aplicações já existentes, adaptando seus designs e recursos. Utilizei tecnologias como TypeScript, React, MongoDB, TailwindCSS e CSS no desenvolvimento da aplicação.
 
+[Link da aplicação back-end](https://github.com/pedroalima/API-img-x)
+
 ## Índice
 
 - [Screenshots](#screenshots)
@@ -67,70 +69,35 @@ Para trabalhar com upload de arquivos o express precisa de um middleware chamado
     encType="multipart/form-data" 
     className="bg-white p-10 rounded-xl flex gap-8 flex-col justify-center items-center"
     >
-    <h2 
-        className="text-2xl"
-    >Nos envie uma imagem</h2>
-
-    <input
-        type="file"
-        accept="image/*"
-        multiple
-        name="image"
-        onChange={handleChangeImage}
-    />
-
-    <button 
-        type="submit" 
-        className="bg-emerald-400 hover:bg-emerald-500 text-white font-bold py-1 px-4 rounded-2xl"
-    >Enviar</button>
+...
 </form>
 ```
-
- <!-- Ao definir cada esquema, é necessário criar e exportar o modelo correspondente. Dessa forma, tudo está pronto para ser aplicado em cada rota.
+  Em seguida basta criar as configurações que nomeiam e destinam o local do arquivo dentro do repositório.
 
 ```tsx
-import connectToDatabase from "@/database";
-import Home from "@/models/Home";
-import { NextRequest, NextResponse } from "next/server";
+const multer = require("multer");
+const path = require("path");
 
-export const dynamic = "force-dynamic";
-
-export async function POST(req: NextRequest) {
-    try {
-        await connectToDatabase();
-        const extractData = await req.json();
-        const saveData = await Home.create(extractData);
-
-        if (saveData) {
-            return NextResponse.json({
-                success: true,
-                message: "Data saved successfully",
-            });
-        } else {
-            return NextResponse.json({
-                success: false,
-                message: "Something goes wrong! Please try again",
-            });
-        }
-    } catch (error) {
-        console.log(error);
-
-        return NextResponse.json({
-            success: false,
-            message: "Something goes wrong! Please try again",
-        });
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "uploads/");
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname));
     }
-}
+});
+
+const upload = multer({ storage });
+
+module.exports = upload
 ```
 
-Veja mais detalhes na documentação oficial [aqui](https://mongoosejs.com/docs/guide.html)
+Veja mais detalhes na [documentação oficial](https://github.com/expressjs/multer)
 </br>
 
 ## Rodando o projeto
 
-![#](./public/desktop.gif)
-
-### Acesse a aplicação via web [aqui!](https://portifolio-pedroalima.vercel.app/)
+<!-- ### Acesse a [aplicação via web]() -->
 
 #### Ou instale na sua máquina. Para conferir a versão final, é só realizar os seguintes passos:
 
@@ -138,19 +105,14 @@ Veja mais detalhes na documentação oficial [aqui](https://mongoosejs.com/docs/
 Navegue até o diretório onde deseja clonar o projeto. Abra o terminal com o GitBash e execute o comando:
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/pedroalima/img-x.git
 ```
-Substitua URL_DO_REPOSITORIO pela URL do repositório deste projeto.
 
 #### 2 - Instalando Dependências:
 Navegue até a pasta clonada do projeto e execute o comando no terminal:
 
 ```bash
 npm install
-```
-ou
-```bash
-yarn install
 ```
 
 #### 3 - Executando o Projeto:
@@ -159,7 +121,7 @@ Ainda na pasta do projeto, execute o comando no terminal:
 ```bash
 npm run dev
 ```
-Isso iniciará o servidor de desenvolvimento Next.
+Isso iniciará o servidor de desenvolvimento Vite.
 
 </br>
 
